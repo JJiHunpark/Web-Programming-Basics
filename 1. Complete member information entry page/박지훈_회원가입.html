@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>회원 정보를 입력하세요</h1>
+	<form action="http://www.kpu.ac.kr/send.jsp" method="POST">
+		<fieldset>
+			<legend>개인 정보</legend>
+			<ul>
+				<li>이름 &nbsp;<input type="text" placeholder="공백없이 입력하세요" autofocus required pattern="[a-zA-z]{4,10}"></li>
+				<li>생일 &nbsp;<input type="date" placeholder="" required pattern=""></li>
+				<li>전화번호 &nbsp;<input type="tel" placeholder="***-****-****" required pattern="0\d{1,2}\-\d{3,4}\-\d{4}"></li>
+				<li>메일주소 &nbsp;<input type="email" placeholder="*****@*****.***" required pattern="^[a-zA-Z0-9]+@[a-zA-Z0-9]+$"></li>
+				<li>홈페이지 &nbsp;<input type="url" placeholder="공백없이 입력하세요" required pattern=""></li>
+
+				<li> 혈액형&nbsp;
+					<select name="blood">
+						<option value="A" selected>A형</option>
+						<option value="B">B형</option>
+						<option value="C">C형</option>
+						<option value="D">D형</option>
+					 </select></li>
+				<li>지역&nbsp;
+					<select name="area">
+						<option value="한국">한국</option>
+						<option value="미국">미국</option>
+						<option value="캐나다" selected>캐나다</option>
+						<option value="중국">중국</option>
+						<option value="유럽">유럽</option>
+					 </select></li>
+				<li>성별 :&nbsp;
+					<label for = "M">남성</label>
+					<input type="radio" name="gender" id="M" value="male" placeholder="" required pattern="">
+					<label for = "F">여성</label>
+					<input type="radio" name="gender" id="F" value="female" checked placeholder="" required pattern="">
+					</label></li>
+			</ul>
+		</fieldset><br>
+
+		<fieldset>
+			<legend>기타 정보</legend>
+			<ul>
+				<li>가고 싶은 여행지 &nbsp;
+						<select name="travel">
+							<option value="괌">괌</option>
+							<option value="도쿄">도쿄</option>
+							<option value="홍콩" selected>홍콩</option>
+							<option value="하와이">하와이</option>
+							<option value="방콕">방콕</option>
+						 </select></li>
+			<li>자주사용하는 검색 키워드 &nbsp;<input type="text" placeholder="검색 키워드" required pattern=""></li>
+			<li>좋아하는 과일 &nbsp; 
+				Apple&nbsp;<input type="checkbox" name="fruits" value="apple" checked
+				placeholder="" required pattern="">
+				Grape&nbsp;<input type="checkbox" name="fruits" value="Grape"
+				placeholder="" required pattern="">
+				Orange&nbsp;<input type="checkbox" name="fruits" value="Orange"
+				placeholder="" required pattern=""></li>
+			</ul>
+		</fieldset><br>
+
+		<fieldset>
+			<legend>하고 싶은 말</legend>
+			<textarea name="say" rows="5" cols="50"></textarea>
+		</fieldset>
+	</form>
+	<br>
+	<input type="submit" name="send" value="보내기" >
+	<input type="reset" name="reset" value="다시작성">
+
+</body>
+</html>
