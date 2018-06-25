@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		h1 {
+			text-align: center;
+			text-decoration: underline;
+			color: #3366cc;
+		}
+		h3{
+			text-align: center;
+			font-weight: bold;
+		}
+		body {
+			background-color: #e6ffff;
+		}
+		table{
+			border: 2px solid #009999;
+			border-collapse: collapse;
+			width: 60%;
+			height: 100%;
+			margin: auto;
+			text-align: center;
+			font-weight: bold;
+		}
+		table.sub{
+			width: 35%;
+			height: 100%;
+		}
+		th, td {
+			border: 2px solid #009999;
+		}
+		th{
+			color: #ff3300;
+		}
+		td{
+			color: #009933;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		document.writeln("<h1>자바 스크립트 객체 예제</h1>");
+		document.writeln("<h3>학생이름, 운영체제, 프로그래밍, 알고리즘, 자료구조, 전산학기초 점수</h3>");
+
+		// 학생 객체
+		function Student(name, op, prg, alg, data, cs)
+		{
+			this.name = name;
+			this.op = op;
+			this.prg = prg;
+			this.alg = alg;
+			this.data = data;
+			this.cs = cs;
+		}
+		// 학생 총점
+		Student.prototype.getSum = function(){
+			var sum=0;
+			sum = this.op + this.prg + this.alg + this.data + this.cs;
+			return sum;
+		};
+		// 학생 평균
+		Student.prototype.getAverage = function(){
+			var average=0;
+			average = this.getSum() / 5;
+			return average;
+		};
+
+		// 객체 생성
+		var students = new Array();
+      	students.push(new Student('성주영', 86, 92, 89, 95, 89));
+      	students.push(new Student('김효성', 91, 94, 92, 98, 86));
+      	students.push(new Student('정재호', 86, 96, 93, 90, 84));
+      	students.push(new Student('오민주', 94, 95, 96, 92, 94));
+      	students.push(new Student('강석찬', 82, 91, 96, 88, 93));
+      	students.push(new Student('유명한', 78, 84, 91, 92, 82));
+      	students.push(new Student('육준호', 78, 81, 81, 76, 78));
+      	students.push(new Student('황주희', 75, 79, 76, 83, 76));
+      	students.push(new Student('박주호', 97, 92, 88, 95, 87));
+      	students.push(new Student('김영준', 62, 68, 82, 78, 77));
+      	// 객체 데이터 데티블 생성
+      	document.writeln("<table>");
+		document.writeln("<tr><th>이름</th><th>운영체제</th><th>프로그래밍</th><th>알고리즘</th><th>자료구조</th><th>전산학기초</th></tr>")
+	    for(var i=0; i<students.length; i++){
+	      document.writeln("<tr><td>" + students[i].name + "</td><td>" + students[i].op+ "</td><td>" +
+	         students[i].prg+ "</td><td>" + students[i].alg+ "</td><td>" + students[i].data+ "</td><td>" + students[i].cs +"</td></tr>");
+	    }
+	    document.writeln("</table>");
+
+	    // 점수 합계 내림차순 정렬
+	    students.sort(function(a, b) {
+	    	return b.getSum() - a.getSum()
+	    });
+		// 상위 30% 학생 출력
+		document.writeln("<h3>상위 30%</h3>");
+		document.writeln("<table class='sub'>");
+		document.writeln("<tr><th>이름</th><th>총점</th><th>평균</th>");
+		for(var i=0; i<students.length*0.3; i++){
+			document.writeln("<tr><td>" + students[i].name + "</td><td>" + students[i].getSum() + "</td><td>" + students[i].getAverage() + "</<td></tr>");
+		}
+		document.writeln("</table>");
+
+		// 점수 합계 오름차순 정렬
+		students.sort(function(a, b) {
+	    	return a.getSum() - b.getSum()
+	    });
+	    // 하위 30% 학생 출력
+		document.writeln("<h3>하위 30%</h3>");
+		document.writeln("<table class='sub'>");
+		document.writeln("<tr><th>이름</th><th>총점</th><th>평균</th>");
+		for(var i=0; i<students.length*0.3; i++){
+			document.writeln("<tr><td>" + students[i].name + "</td><td>" + students[i].getSum() + "</td><td>" + students[i].getAverage() + "</<td></tr>");
+		}
+		document.writeln("</table>");
+		</script>
+</body>
+</html>
+
+
+
+
+	
