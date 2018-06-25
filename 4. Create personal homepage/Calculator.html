@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>My Applicaion</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/Calculator.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="main.html">Aaron Park</a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="main.html">Home</a></li>
+					<li><a href="Schedule.html">SCHEDULE</a></li>
+					<li><a href="Calculator.html">APPLICATION</a></li>
+					<li><a href="Game.html">GAME</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper">
+						<div class="inner">
+							<header class="align-center">
+								<h1><계산기></h1>
+								<p>여러분을 위해 계산기를 준비했어요!</p>
+							</header>
+							<div class="flex flex-2">
+									<form name="myform">
+									<table class="cal">
+										<tr>
+											<td colspan="2">
+												<table class="input">
+													<tr>
+														<th class="cal">JavaScript Calculator</th>
+													</tr>
+													<tr>
+														 <td class="input"><input type="text" name="screen" maxlength="40" size="25"> </td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<table class="cal">
+													<tr>
+									    				<td>
+													    <input type="button" value=" 7 " onclick="cal('7')" class="btn">
+													    <input type="button" value=" 8 " onclick="cal('8')" class="btn">
+													    <input type="button" value=" 9 " onclick="cal('9')" class="btn">
+													    </td>
+													</tr>
+													<tr>
+													    <td>
+													    <input type="button" value=" 4 " onclick="cal('4')" class="btn">
+													    <input type="button" value=" 5 " onclick="cal('5')" class="btn">
+													    <input type="button" value=" 6 " onclick="cal('6')" class="btn">
+													    </td>
+												    </tr>
+												    <tr>
+													    <td>
+													    <input type="button" value=" 1 " onclick="cal('1')" class="btn">
+													    <input type="button" value=" 2 " onclick="cal('2')" class="btn">
+													    <input type="button" value=" 3 " onclick="cal('3')" class="btn">
+													    </td>
+													</tr>
+													<tr>
+													    <td>
+													    <input type="button" value=" +/- " onclick="NegateButton(); return false;" class="btn">
+													    <input type="button" value=" 0 " onclick="cal('0')" class="btn">
+													    <input type="button" value=" . " onclick="cal('.')" class="btn">
+													    </td>
+													</tr>
+												</table>
+											</td>
+											<td>
+												<table class="cal">
+													<tr>
+									    				<td>
+													    <input type="button" value=" CE " onclick="CECalc(); return false;" class="btn">
+													    <input type="button" value=" C " onclick="clearcal()" class="btn">
+													    <input type="button" value=" help " onclick="Help();" class="btn">
+													    </td>
+													</tr>
+													<tr>
+									    				<td>
+													    <input type="button" value=" * " onclick="cal('*')" class="btn">
+													    <input type="button" value=" / " onclick="cal('/')" class="btn">
+													    <input type="button" value=" % " onclick="PercentButton(); return false;" class="btn">
+													    </td>
+													</tr>
+													<tr>
+									    				<td>
+													    <input type="button" value=" + " onclick="cal('+')" class="btn">
+													   <input type="button" value=" - " onclick="cal('-')" class="btn">
+													    <input type="button" value=" 1/x " onclick="RecipButton(); return false;" class="btn">
+													    </td>
+													</tr>
+													<tr>
+									    				<td>
+													    <input type="button" value=" = " onclick="answer()" class="btn">
+													   <input type="button" value="log" onclick="Log(); return false;" class="btn">
+													    <input type="button" value="sqrt" onclick="Sqrt(); return false;" class="btn" >
+													    </td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</form>
+							</div>
+							<header class="align-center">
+								<br><br>
+								<p>계산기가 필요하시다면 이용해보세요~!<br>여러분을 위해 특별히 준비했어요!</p>
+							</header>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<header class="align-center">
+								<h2>Also, enjoy my schedule and some work!</h2>
+								<p>나가지 마시고 제 홈페이지를 좀 더 구경해주세요오옹~!</p>
+							</header>
+							<div class="flex flex-3">
+								<div class="col align-center">
+									<div class="image round fit">
+										<img src="images/Schedule.jpg" alt="" />
+									</div>
+									<p>제 일정이 궁금하시다고요?<br>솜사탕 같은 시계도 준비했답니다!<br>궁금하시면 아래 버튼을 눌러주세요~! </p>
+									<a href="Schedule.html" class="button">SCHEDULE</a>
+								</div>
+								<div class="col align-center">
+									<div class="image round fit">
+										<img src="images/Calculator.jpg" alt="" />
+									</div>
+									<p>혹시나 계산기가 필요하실까 봐 준비했어요.<br>나름 여러가지 기능도 있답니다!<br>암산도 좋지만 제 계산기도 이용해보세요~! </p>
+									<a href="Calculator.html" class="button">CALCULATOR</a>
+								</div>
+								<div class="col align-center">
+									<div class="image round fit">
+										<img src="images/game.jpg" alt="" />
+									</div>
+									<p>소소한 게임도 준비해봤어요.<br>나름 고생 좀 했는데..<br>벽돌깨기라고 아세요? 아주 재밌어요~!</p>
+									<a href="Game.html" class="button">GAME</a>
+								</div>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<p>&copy; Copyright 2018-PJH</p>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="js/Calculator.js"></script>
+
+	</body>
+</html>
